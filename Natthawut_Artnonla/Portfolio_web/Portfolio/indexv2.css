@@ -1,0 +1,737 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@keyframes fadeup{
+    0%{
+        opacity: 0;
+        transform: translateY(30px) scale(0.9);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0px) scale(1);
+    }
+}
+@keyframes fadedown{
+    0%{
+        opacity: 0;
+        transform: translateY(-30px) scale(0.9);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0px) scale(1);
+    }
+}
+@keyframes fadeleft{
+    0%{
+        transform: translateX(-30px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+@keyframes faderight{
+    0%{
+        transform: translateX(30px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+@keyframes popup{
+    0%{
+        transform: scale(0.8);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.con{
+    display: flex;
+    flex-direction: row;
+    background: url(picture/dfkiqc3-8ff56077-a5b1-4e4f-9fec-bfba3fc082a3.jpg) center;
+    background-size: cover;
+    transition: 0.2s;
+    min-width: 100vw;
+}
+.left-content{
+    min-width: 50px;
+    width: 25%;
+    min-height: 100vh;
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border:1px solid white;
+    color: white;
+    backdrop-filter: blur(25px);
+    box-shadow: 3px 8px 32px rgb(255,255,255,0.55);
+    border-radius: 25px;
+    transition: 0.2s;
+}
+.profile{
+    width: 100px;
+    height: 100px;
+    border-radius:100px ;
+    margin: 20px 0px 10px 0px;
+    transition: 0.3s;
+    overflow: hidden;
+    animation: fadeup 0.3s;
+}
+.profile img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    transition: 0.3s;
+}
+.profile img:hover{
+    transform: scale(1.2);
+}
+.Name{
+    margin-bottom: 25px;
+    color: white;
+    cursor:default;
+}
+.Name::after{
+    content: "";
+    width: 80%;
+    height: 2px;
+    background: white;
+    position: absolute;
+    left: 10%;
+    top: 175px;
+}
+.contect{
+    border-radius: 15px;
+    animation:  fadedown 0.3s;
+}
+.contect div,
+.contect a{
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+    height: 60px;
+    cursor: pointer;
+    transition: 0.2s;
+    text-decoration: none;
+    padding: 10px;
+    color: white;
+    border-radius: 10px;
+    display: flex;
+    box-shadow: 3px 8px 32px rgb(255,255,255,0.55);
+    align-items: center;
+}
+.contect div:hover,
+.contect a:hover{
+    background: white;
+    color: black;
+    transform: scale(1.1);
+}
+.contect div:hover p,
+.contect div:hover i,
+.contect a:hover p,
+.contect a:hover i{
+    color: black;
+}
+.contect div i,
+.contect a i{
+    margin-right: 10px;
+}
+.Text{
+    display: none;
+}
+.Email:hover .Text,
+.Tel:hover .Text{
+    font-size: 12px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    padding: 5px;
+    top: 15px;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.right-content{
+    min-width: 100px;
+    width: 70%;
+    min-height: 100vh;
+    margin: 20px;
+    border: 1px solid white;
+    border-radius: 25px;
+    box-shadow: 3px 8px 32px rgb(255,255,255,0.55);
+    backdrop-filter: blur(25px);
+    transition: 0.2s;
+}
+.changemode{
+    position: absolute;
+    z-index: 200;
+    margin-top: 10px;
+    animation: fadeup 0.3s;
+}
+.changemode ul{
+    color: white;
+    margin-left: 45px;
+    cursor: pointer;
+}
+#lightmodebtn{
+    display: flex;
+}
+#darkmodebtn{
+    display: none;
+}
+.changemode ul:first-child::after{
+    content: "light mode";
+    color: black;
+    background: white;
+    padding: 2px;
+    width: 70px;
+    border-radius: 10px;
+    position:absolute;
+    left: 20px;
+    top: 20px;
+    opacity: 0;
+    transition: 0.2s;
+}
+.changemode ul:last-child::after{
+    content: "dark mode";
+    color: black;
+    background: white;
+    padding: 2px;
+    width: 70px;
+    border-radius: 10px;
+    position:absolute;
+    left: 20px;
+    top: 20px;
+    opacity: 0;
+    transition: 0.2s;
+}
+.changemode ul:hover::after{
+    opacity: 1;
+}
+#bars{
+    display: none;
+    position: absolute;
+    top: -100%;
+}
+.menu-sidebar{
+    display: none;
+}
+.menu{
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    right: 50px;
+    z-index: 199;
+    margin-top: 10px;
+    animation: fadeup 0.3s;
+}
+.menu ul{
+    margin: 0px 20px 0px 20px;
+    color: white;
+    cursor: pointer;
+    position: relative;
+}
+.menu ul::before{
+    position: absolute;
+    top: 25px;
+    left: 50%;
+    content: "";
+    height: 3px;
+    width: 0%;
+    background: white;
+    transition: 0.2s;
+}
+.menu ul:hover::before{
+    width: 50%;
+}
+.menu ul::after{
+    position: absolute;
+    top: 25px;
+    right: 50%;
+    content: "";
+    height: 3px;
+    width: 0%;
+    background: white;
+    transition: 0.2s;
+}
+.menu ul:hover::after{
+    width: 50%;
+}
+.About-me-content{
+    backdrop-filter: blur(25px);
+    border-radius: 25px;
+    margin-top: 50px;
+    padding: 20px;
+    border: solid white 5px;
+    width: 100%;
+    flex-direction: column;
+    height: 90%;
+    overflow: auto;
+    display: flex;
+    animation: fadeup 0.3s;
+}
+.About-me-content h1,p,h3{
+    font-family:Arial, Helvetica, sans-serif;
+    color: white;
+}
+.About-me-content p,h3{
+    margin-bottom: 40px;
+}
+.About-me-content .Education{
+    display: flex;
+    flex-direction: row;
+    margin-top: -30px;
+    margin-bottom: 40px;
+}
+.Education .ED-timeline{
+    background:white;
+    width:2px ;
+    height: 200px;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.ED-timeline #st{
+    width: 12px;
+    height: 12px;
+    background: white;
+    border-radius: 20px;
+    margin: 30px 0px 50px 0px;
+}
+.BC-info{
+    margin-top: 0px;
+    margin-left: 40px;
+}
+.BC-info p{
+    margin: 0;
+}
+.HS-info{
+    margin-top: 30px;
+    margin-left: 40px;
+}
+.HS-info p{
+    margin: 0px;
+}
+.Abilities{
+    margin-top: -40px;
+    margin-bottom: 40px;
+    color: white;
+}
+.Experiences{
+    margin-top: -40px;
+    color: white;
+}
+.Resume-content{
+    backdrop-filter: blur(25px);
+    border-radius: 25px;
+    margin-top: 50px;
+    padding: 20px;
+    border: solid white 5px;
+    width: 100%;
+    flex-direction: column;
+    height: 90%;
+    overflow: auto;
+    display: none;
+    animation: fadeup 0.3s;
+}
+.document{
+    display: flex;
+    justify-content: space-between;
+    border: 2px solid white;
+    margin: 3px 20px;
+    height: 100px;
+    transition: 0.2s;
+}
+.document:hover{
+    box-shadow: inset 0 0 20px rgba(255, 255, 255);
+}
+.document #document{
+    font-size: 20px;
+    margin: 5px 10px;
+}
+.button{
+    align-self: flex-end;
+    margin: 5px 10px;
+    width: 50%;
+    height: 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+#button{
+   width: 100px;
+   height: 25px;
+   border-radius: 25px;
+   border: white solid 1px;
+   color: white;
+   cursor: pointer;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   text-decoration: none;
+   transition: 0.3s;
+}
+#button:hover{
+    background: white;
+    color: black;
+}
+
+/* Viwe document */
+.Document-viwe{
+    min-height: 100vh;
+    min-width: 100vw;
+    background: rgb(0,0,0,0.5);
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 200;
+}
+.Document-viwe i{
+    color: white;
+    transform: scale(2);
+    position: absolute;
+    left: 5%;
+    top: 5%;
+    animation: popup 0.15s;
+}
+.resume{
+    width: 340px;
+    height: 540px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: popup 0.15s;
+}
+.Project-content{
+    backdrop-filter: blur(25px);
+    border-radius: 25px;
+    margin-top: 50px;
+    padding: 20px;
+    border: solid white 5px;
+    width: 100%;
+    flex-direction: column;
+    height: 90%;
+    overflow: auto;
+    display: none;
+    flex-direction: row;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    animation: fadeup 0.3s;
+}
+.project{
+    width: 240px;
+    height: 340px;
+    background: black;
+    border-radius: 14px;
+    overflow: hidden;
+    margin: 10px 10px 10px 10px;
+    box-shadow: 3px 8px 32px rgb(0,0,0,0.15);
+    transition: 0.2s;
+    cursor: pointer;
+    border: 1px solid white;
+}
+.project:nth-child(2) img{
+    background: white;
+}
+.project:hover{
+    transform: perspective(200px) translateZ(20px);
+}
+.project a img{
+    object-fit: cover;
+    width: 100%;
+    height: 150px;
+}
+.project span{
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: goldenrod;
+    margin: 0px 10px 0px 10px;
+}
+.project p{
+    font-size: 14px;
+    margin: 0px 10px 0px 10px;
+}
+.alert{
+    display: none;
+    position: absolute;
+    left: 2.5%;
+    top: 5%;
+    align-items: center;
+    justify-content: center;
+    background: #a0a0a0a0;
+    backdrop-filter: blur(25px);
+    color: white;
+    border-radius: 5px;
+    width: 200px;
+    height: 50px;
+    animation: fadeleft 0.2s;
+    z-index: 500;
+}
+
+
+/* ----------------------------------------------------------lightmode---------------------------------------------*/
+.con.lightmode{
+    background: white;
+}
+.left-content.lightmode,
+.right-content.lightmode{
+    border: 1px solid black;
+}
+.Name.lightmode{
+    color: black;
+}
+.Name.lightmode::after{
+    background: black;
+}
+.Email.lightmode,
+.FB.lightmode,
+.IG.lightmode,
+.Tel.lightmode{
+    background: white;
+    box-shadow: 3px 8px 32px rgb(0,0,0,0.35);
+    color: black;
+    margin: 10px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.Email.lightmode p,
+.FB.lightmode p,
+.IG.lightmode p,
+.Tel.lightmode p{
+    color: black;
+}
+#darkmodebtn.lightmode:hover::after{
+    background: black;
+    color: white;
+}
+.About-Me-button.lightmode,
+.Resume-button.lightmode,
+.Project-button.lightmode{
+    color: black;
+}
+.About-Me-button.lightmode:hover::after,
+.Resume-button.lightmode:hover::after,
+.Project-button.lightmode:hover::after{
+    background: black;
+}
+.About-Me-button.lightmode:hover::before,
+.Resume-button.lightmode:hover::before,
+.Project-button.lightmode:hover::before{
+    background: black;
+}
+.About-me-content.lightmode,
+.Resume-content.lightmode,
+.Project-content.lightmode{
+    background: black;
+}
+
+/*-----------------------------------------------------------Respon--------------------------------------------*/
+@media(width < 1100px) {
+.left-content{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.right-content{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.profile{
+    height: 80px;
+    width: 80px;
+    margin: 25px;
+}
+.contect{
+    width: 100%;
+}
+.contect i{
+    transform: translateX(5px);
+}
+.Email,
+.FB,
+.IG,
+.Tel{
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+.Email p,
+.FB p,
+.IG p,
+.Tel p{
+    display: none;
+}
+.Email.lightmode,
+.FB.lightmode,
+.IG.lightmode,
+.Tel.lightmode{
+    justify-content: center;
+}
+}
+
+@media(width < 600px){
+    .left-content{
+        margin-right: 5px;
+    }
+    .right-content{
+        margin-left: 5px;
+    }
+    .Name{
+        font-size: 14px;
+    }
+    .menu,
+    .changemode{
+        display: none;
+    }
+    #bars{
+        display: flex;
+        position: absolute;
+        right: 50px;
+        top: 15px;
+        cursor: pointer;
+    }
+    #bars i{
+        color: white;
+    }
+    .menu-sidebar{
+        display: none;
+        flex-direction: column;
+        padding: 20px;
+        height: 100%;
+        width: 200px;
+        backdrop-filter: blur(25px);
+        position: absolute;
+        border: 1px solid white;
+        border-radius: 20px;
+        right: 0;
+        z-index: 999;
+        animation: faderight 0.2s;
+    }
+    .menu-sidebar ul{
+        margin: 10px 0px 10px 0px;
+        cursor: pointer;
+        padding: 10px 5px 10px 5px;
+        color: white;
+        transition: 0.2s;
+        width: 105px;
+    }
+    .menu-sidebar ul:first-child{
+        margin-top: 0px;
+    }
+    .menu-sidebar i:first-child{
+        color: white;
+    }
+    #lightmodebtn2{
+        display: flex;
+    }
+    #lightmodebtn2::after,
+    #darkmodebtn2::after{
+        content: "light mode";
+        color: black;
+        background: white;
+        padding: 2px;
+        width: 70px;
+        border-radius: 10px;
+        position: relative;
+        bottom: 4px;
+        left: -10px;
+        opacity: 0;
+        transition: 0.2s;
+    }
+    #lightmodebtn2:hover::after,
+    #darkmodebtn2:hover::after{
+        left: 10px;
+        opacity: 1;
+    }
+    #darkmodebtn2{
+        display: none;
+    }
+    #darkmodebtn2::after{
+        content: "dark mode";
+    }
+    .menu-sidebar ul:hover:nth-child(n+3){
+        background: white;
+        color: black;
+        border-radius: 5px;
+    }
+    .About-me-content h1{
+        font-size: 28px;
+    }
+    .About-me-content p{
+        font-size: 14px;
+    }
+    .About-me-content h3{
+        font-size: 16px;
+    }
+    .BC-info p,
+    .HS-info p{
+        font-size: 14px;
+    }
+    .Abilities ul{
+        font-size: 14px;
+    }
+    .Experiences{
+        font-size: 14px;
+    }
+}
+@media(width < 500px){
+    .con{
+        flex-direction: column;
+    }
+    .left-content{
+        flex-direction: row;
+        width: 95%;
+        margin: 10px;
+        margin-bottom: 0px;
+        height: 150px;
+        min-height: 15vh;
+        padding: 0;
+        align-items: center;
+    }
+    .profile{
+        width: 80px;
+        height: 80px;
+        transform: translate(5px,-10px);
+    }
+    .Name{
+        position: absolute;
+        bottom: 0;
+        left: 5%;
+    }
+    .contect{
+        display: flex;
+        flex-direction: row;
+        justify-self: flex-end;
+        width: 60%;
+        margin-right: -50px;
+        justify-content: space-around;
+        position: relative;
+        
+    }
+    .contect div,
+    .contect a{
+        margin: 0px;
+        box-shadow: none;
+        border: 1px solid white;
+    }
+    .right-content{
+        margin-top: 10px;
+        width: 95%;
+        margin: 10px;
+    }
+}

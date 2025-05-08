@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+</head>
+<body>
+    <div class="warp">
+        <div class="left">
+            <div class="img"></div>
+            <a id="one" onclick="showLogin()">Login</a>
+            <a id="two" onclick="showSignUp()">Sign in</a>
+        </div>
+        <div class="right">
+           <div class="TheLogin">
+                <div class="logo"></div>
+                <div class="p">Login</div>
+                <div class="input">
+
+                    <form>
+                        <label for="Email"></label>
+                    <input type="text" id="Email" name="Email" placeholder="Email" onkeyup="validEmail()">
+                    <span id="Email-error"></span>
+
+                    <label for="Passoword"></label>
+                    <input type="text" id="Password" name="Password" placeholder="Password" onkeyup="validPasswprd()">
+                    <span id="Password-error"></span>
+
+                    <div class="a">
+                        <a href="#" id="Forget-Password">Forget Password?</a>
+                        <a href="Home.html" id="Login">Login</a>
+                    </div>
+
+                    <div class="other">
+                        <a href="#"><img src="picture/googleicon (1).png" width="20px" height="20px">Login with Google</a>
+                        <a href="#"><img src="picture/googleicon (2).png" width="20px" height="20px">Login with Facebook</a>
+                        <a href="Home.html" id="without">Stay logged out</a>
+                    </div>
+                    <div class="workat1130px">
+                        <a id="one" onclick="showLogin()">Login</a>
+                        <a id="two" onclick="showSignUp()">Sign in</a>
+                    </div>
+                    </form>
+                </div>
+           </div>
+           <div class="TheSignup">
+            <div class="logo"></div>
+            <div class="p">Sign Up</div>
+            <div class="input">
+
+                <form>
+                    <label for="Name"></label>
+                <input type="text" id="Name" name="Name" placeholder="Write your full name" onkeyup="validName()">
+                <span id="Name-error"></span>    
+
+                <label for="Email"></label>
+                <input type="text" id="Email2" name="Email2" placeholder="Email" onkeyup="validEmail2()">
+                <span id="Email2-error"></span>
+
+                <label for="Passoword"></label>
+                <input type="password" id="Password2" name="Password2" placeholder="Password" onkeyup="validPasswprd2()">
+                <span id="Password2-error"></span>
+
+                 <div class="a">
+                    <a href="#" id="Forget-Password">Get better Password</a>
+                    <a href="Home.html" id="Login" type="submit">Sign Up</a>
+                 </div>
+
+                 <div class="other">
+                    <a href="#"><img src="picture/googleicon (1).png" width="15px" height="15px">Sign up with Google</a>
+                    <a href="#"><img src="picture/googleicon (2).png" width="15px" height="15px">Sign up with Facebook</a>
+                    <a href="Home.html" id="without">Stay logged out</a>
+                </div>
+                <div class="workat1130px">
+                    <a id="one" onclick="showLogin()">Login</a>
+                    <a id="two" onclick="showSignUp()">Sign in</a>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+       function showLogin(){
+        let Loginpage = document.querySelector('.TheLogin')
+        Loginpage.style.display = 'flex'
+        let Loginbutton = document.getElementById('one')
+        Loginbutton.style.transform = 'translateX(10px)'
+        Loginbutton.style.borderRadius = '50px 0 0 50px'
+        let SignUppage = document.querySelector('.TheSignup')
+        SignUppage.style.display = 'none'
+        let SignUpbutton = document.getElementById('two')
+        SignUpbutton.style.transform = 'translateX(0px)'
+        SignUpbutton.style.borderRadius = '50px'
+       }
+       function showSignUp(){
+        let Loginpage = document.querySelector('.TheLogin')
+        Loginpage.style.display = 'none'
+        let Loginbutton = document.getElementById('one')
+        Loginbutton.style.transform = 'translateX(0px)'
+        Loginbutton.style.borderRadius = '50px'
+        let SignUppage = document.querySelector('.TheSignup')
+        SignUppage.style.display = 'flex'
+        let SignUpbutton = document.getElementById('two')
+        SignUpbutton.style.transform = 'translateX(10px)'
+        SignUpbutton.style.borderRadius = '50px 0 0 50px'
+       }
+
+        let NameError = document.getElementById('Name-error')
+        let EmailError2 = document.getElementById('Email2-error')
+        let EmailError = document.getElementById('Email-error')
+        let PasswordError = document.getElementById('Password-error')
+        let PasswordError2 = document.getElementById('Password2-error')
+
+        function validName(){
+            let Name = document.getElementById('Name').value
+            if(Name === "" || Name === null){
+                NameError.innerHTML = "Name is required"
+                return false
+            }
+            if(!Name.match(/^[A-Za-z]*\s{1}[A-Za-z]*$/)){
+                NameError.innerHTML = "Write full name"
+                return false
+            }
+            NameError.innerHTML = '<i class="fas fa-check-circle"></i>'
+            return true
+        }
+
+        function validEmail(){
+            let Email = document.getElementById('Email').value
+            if(Email === "" || Email === null){
+                EmailError.innerHTML = "Email is required"
+                return false
+            }
+            if(!Email.match(/^[A-Za-z\._\-0-9]*[@]*[A-Za-z]*[\.][a-z]{2,4}$/)){
+                EmailError.innerHTML = "Email is not correct"
+                return false
+            }
+            EmailError.innerHTML = '<i class="fas fa-check-circle"></i>'
+            return true
+        }
+
+        function validEmail2(){
+            let Email2 = document.getElementById('Email2').value
+            if(Email2 === "" || Email2 === null){
+                EmailError2.innerHTML = "Email is required"
+                return false
+            }
+            if(!Email2.match(/^[A-Za-z\._\-0-9]*[@]*[A-Za-z]*[\.][a-z]{2,4}$/)){
+                EmailError2.innerHTML = "Email is not correct"
+                return false
+            }
+            EmailError2.innerHTML = '<i class="fas fa-check-circle"></i>'
+            return true
+        }
+
+        function validPasswprd(){
+            let Password = document.getElementById('Password').value.trim()
+            if(Password === "" || Password === null){
+                PasswordError.innerHTML = "Password is required"
+                return false
+            }
+            if(Password.length < 10){
+                PasswordError.innerHTML = "Password is too short"
+            }
+            PasswordError.innerHTML = '<i class="fas fa-check-circle"></i>'
+            return true
+        }
+
+        function validPasswprd2(){
+            let Password2 = document.getElementById('Password2').value.trim()
+            if(Password2 === "" || Password2 === null){
+                PasswordError2.innerHTML = "Password is required"
+                return false
+            }
+            if(Password2.length < 10){
+                PasswordError2.innerHTML = "Password is too short"
+            }
+            PasswordError2.innerHTML = '<i class="fas fa-check-circle"></i>'
+            return true
+        }
+    </script>
+</body>
+</html>

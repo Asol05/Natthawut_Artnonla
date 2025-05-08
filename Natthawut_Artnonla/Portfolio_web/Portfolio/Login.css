@@ -1,0 +1,379 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.warp{
+    display: flex;
+    flex-direction: row;
+}
+.left{
+    min-width: 30%;
+    height: 600px;
+    background: url(picture/05d97eb7ebca345430f39b21ddc67498.jpg) no-repeat;
+    background-size: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+.left .img{
+    width: 50%;
+    height: 25%;
+    background: url(picture/b.png) no-repeat;
+    background-size: 100%;
+    transform: translate(-5%,-10%);
+}
+.left a{
+    color: black;
+    width: 100px;
+    height: 40px;
+    background: white;
+    border-radius: 50px;
+    margin: 20px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 125px;
+    cursor: pointer;
+}
+.left #one{
+    transform: translateX(10px);
+    border-radius: 50px 0 0 50px;
+    transition: 0.5s;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.left #one:hover,
+.left #two:hover{
+    background: black;
+    color: #fcfcf7;
+}
+.left #two{
+    transition: 0.5s;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+}
+.right{
+    width: 60%;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+}
+.TheLogin{
+    display: flex;
+    flex-direction: column;
+    max-width: 50%;
+    min-width: 400px;
+    transform: translate(10%,0);
+    transition: 0.5s;
+}
+.TheLogin .input #one,#two{
+    display: none;
+}
+.TheLogin .logo{
+    height: 100px;
+    width: 100px;
+    align-self: center;
+    justify-self: flex-start;
+    background: url(picture/smalllogo.png);
+    background-size: 100%;
+    margin: 30px 0 10px 0;
+}
+.TheLogin .p{
+    align-self: center;
+    justify-self: center;
+    color: black;
+    font-size: 20px;
+    margin-bottom: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
+}
+.TheLogin .input{
+    display: flex;
+    flex-direction: column;
+}
+.input input{
+    margin: 15px 0;
+    height: 25px;
+    width: 100%;
+    display: inline-block;
+}
+.input .a{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.input .a #Forget-Password{
+    text-decoration: none;
+    color: red;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+.input .a #Login{
+    text-decoration: none;
+    color: black;
+    height: 40px;
+    width: 80px;
+    border-radius: 50px;
+    background: white;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: all 0.3s;
+}
+.input .a #Login:hover{
+    background: black;
+    color: #fcfcf7;
+}
+.input .other{
+    display: flex;
+    flex-direction: column;
+}
+.input .other a{
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin: 10px;
+    height: 25px;
+    border: 1px solid black;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    transition: all 0.3s;
+}
+.input .other a:first-child:hover,
+.input .other a:nth-child(2):hover{
+    background: black;
+    color: #fcfcf7;
+}
+.input .other #without{
+    text-decoration:underline;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    height: 25px;
+    border: 0px ;
+    color: blue;
+}
+.TheSignup{
+    display: none;
+    flex-direction: column;
+    max-width: 60%;
+    min-width: 180px;
+    transform: translate(10%,0);
+    transition: 0.5s;
+}
+.TheSignup .input #one,#two{
+    display: none;
+}
+.TheSignup .logo{
+    height: 100px;
+    width: 100px;
+    align-self: center;
+    justify-self: flex-start;
+    background: url(picture/smalllogo.png);
+    background-size: 100%;
+    margin: 20px 0 10px 0;
+}
+.TheSignup .p{
+    align-self: center;
+    justify-self: center;
+    color: black;
+    font-size: 20px;
+    margin-bottom: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+span{
+    color: red;
+    font-size: 14px;
+}
+span i{
+    color: green;
+}
+
+@media (max-width:1130px){
+    .left{
+        display: none;
+    }
+    .right{
+        width: 100vw;
+        height: 650px;
+        display: flex;
+        align-items: center;
+        background: url(picture/05d97eb7ebca345430f39b21ddc67498.jpg) no-repeat;
+        background-size: 100%;
+        background-position: center;
+    }
+    .TheLogin{
+        transform: translate(0,0);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        border: 1px solid rgb(255,255,255,0.18);
+        box-shadow: 0 8px 32px rgb(0,0,0,0.37);
+        padding: 0 30px 20px 30px;
+    }
+    .TheLogin .input .workat1130px{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-top: 15px;
+        border-top: 1px solid black;
+    }
+    .TheLogin .input .workat1130px #one,#two{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: Arial, Helvetica, sans-serif;
+        color: #fcfcf7;
+        width: 45%;
+        height: 30px;
+        border-radius: 20px;
+        cursor: pointer;
+        transition: all 0.25s;
+    }
+    #one:hover,#two:hover{
+        background: black;
+        color: #fcfcf7;
+    }
+    .input .other a{
+        border: 1px solid white;
+    }
+    .input .a #Login{
+        background: none;
+        border: 1px solid black;
+    }
+    .TheSignup{
+        transform: translate(0,0);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        box-shadow: 0 8px 32px rgb(0,0,0,0.37);
+        margin: 20px 0 20px 0;
+        padding: 0 30px 20px 30px;
+    }
+    .TheSignup .input .workat1130px{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-top: 15px;
+        border-top: 1px solid black;
+    }
+    .TheSignup .input .workat1130px #one,#two{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: Arial, Helvetica, sans-serif;
+        color: #fcfcf7;
+        width: 45%;
+        height: 30px;
+        border-radius: 20px;
+        cursor: pointer;
+        transition: all 0.25s;
+    }
+    #one:hover,#two:hover{
+        background: black;
+        color: #fcfcf7;
+    }
+}
+
+@media (max-width:700px){
+    .left{
+        display: none;
+    }
+    .right{
+        width: 100vw;
+        height: 650px;
+        display: flex;
+        align-items: center;
+        background: url(picture/05d97eb7ebca345430f39b21ddc67498.jpg) no-repeat;
+        background-size: 100%;
+        background-position: center;
+    }
+    .TheLogin{
+        min-width: 200px;
+        transform: translate(0,0);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        border: 1px solid rgb(255,255,255,0.18);
+        box-shadow: 0 8px 32px rgb(0,0,0,0.37);
+        padding: 0 30px 20px 30px;
+    }
+    .TheLogin .input .workat1130px{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-top: 15px;
+        border-top: 1px solid black;
+    }
+    .TheLogin .input .workat1130px #one,#two{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: Arial, Helvetica, sans-serif;
+        color: #fcfcf7;
+        width: 45%;
+        height: 30px;
+        border-radius: 20px;
+        cursor: pointer;
+        transition: all 0.25s;
+    }
+    #one:hover,#two:hover{
+        background: black;
+        color: #fcfcf7;
+    }
+    .input .other a{
+        border: 1px solid white;
+        font-size: 10px;
+    }
+    .input .a #Login{
+        background: none;
+        border: 1px solid black;
+        font-size: 14px;
+    }
+    .TheSignup{
+        transform: translate(0,0);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        box-shadow: 0 8px 32px rgb(0,0,0,0.37);
+        margin: 20px 0 20px 0;
+        padding: 0 30px 20px 30px;
+    }
+    .TheSignup .input .workat1130px{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-top: 15px;
+        border-top: 1px solid black;
+    }
+    .TheSignup .input .workat1130px #one,#two{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: Arial, Helvetica, sans-serif;
+        color: #fcfcf7;
+        width: 45%;
+        height: 30px;
+        border-radius: 20px;
+        cursor: pointer;
+        transition: all 0.25s;
+    }
+    #one:hover,#two:hover{
+        background: black;
+        color: #fcfcf7;
+    }
+    #one{
+        font-size: 14px;
+    }
+    #two{
+        font-size: 14px;
+    }
+    .input input{
+        height: 20px;
+    }
+}

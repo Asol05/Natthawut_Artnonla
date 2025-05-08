@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+    <link rel="stylesheet" href="Home.css">
+    <script defer src="Home.js"></script>
+</head>
+<body>
+    <div class="con">
+        <div class="side-nar">
+            <a href="#"><i class="fas fa-user"></i></a>
+            <a id="closebar" onclick="closesidebar()"><i class="fa-solid fa-xmark"></i></a>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Offers</a>
+            <a href="#">Seats</a>
+            <a href="#">Destinations</a>
+        </div>
+        <div class="header">
+            <div class="logo"></div>
+            <div class="nar">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Offers</a>
+                <a href="#">Seats</a>
+                <a href="#">Destinations</a>
+                <a href="#"><i class="fas fa-user"></i></a>
+            </div>
+            <a id="showbar" onclick="showsidebar()"><i class="fa-solid fa-bars" ></i></a>
+        </div>
+        <div class="body1">
+            <div class="container">
+                <div class="slide">
+                    <div class="item">
+                        <p class="city"></p>
+                        <p id="content"></p>
+                    </div>
+                    <div class="item" onclick="item1()">
+                        <p class="city">NEW YORK</p>
+                    </div>
+                    <div class="item" onclick="item2()">
+                        <p class="city">LONDON</p>
+                    </div>
+                    <div class="item" onclick="item3()">
+                        <p class="city">TOKYO</p>
+                    </div>
+                    <div class="item" onclick="item4()">
+                        <p class="city">SHANGHAI</p>
+                    </div>
+                    <div class="item" onclick="item5()">
+                        <p class="city">PARIS</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="body2">
+            <div class="img"></div>
+            <div class="input">
+                <div class="typeofFight">
+                    <div class="typeofFights">Economy</div>
+                    <div class="typeofFights">Bussiness</div>
+                    <div class="typeofFights">First Class</div>
+                </div>
+                <div class="typeofinput">
+                    <a id="rt" onclick="showRoundtrip()">Round trip</a>
+                    <a id="ow" onclick="showOneway()">One Way</a>
+                </div>
+                <div class="Round-trip">
+                    <form>
+                        <i class="fa-solid fa-plane-departure"></i>
+                        <div>
+                            <label>Take off</label>
+                            <input type="text" id="from" placeholder="Where your home?">
+                        </div>
+                        <i class="fa-solid fa-plane-arrival"></i>
+                        <div>
+                            <label>Location</label>
+                            <input type="text" id="to" placeholder="Where are you going?">
+                        </div>
+                        <i class="fa-regular fa-calendar-days"></i>
+                        <div>
+                            <label>Date</label>
+                            <input type="date" id="date">
+                        </div>
+                        <i class="fa-solid fa-calendar"></i>
+                        <div>
+                            <label>Return</label>
+                            <input type="date" id="return">
+                        </div>
+                        <a><i class="fa-solid fa-magnifying-glass"></i></a>
+                    </form>
+                </div>
+                <div class="oneway">
+                    <form>
+                        <i class="fa-solid fa-plane-departure"></i>
+                        <div>
+                            <label>Take off</label>
+                            <input type="text" id="from" placeholder="Where your home?">
+                        </div>
+                        <i class="fa-solid fa-plane-arrival"></i>
+                        <div>
+                            <label>Location</label>
+                            <input type="text" id="to" placeholder="Where are you going?">
+                        </div>
+                        <i class="fa-regular fa-calendar-days"></i>
+                        <div>
+                            <label>Date</label>
+                            <input type="date" id="date">
+                        </div>
+                        <a><i class="fa-solid fa-magnifying-glass"></i></a>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <p>Many thanks for the opportutnity.</p>
+            <div class="top">
+                <div class="dragonal">
+                    <h3>Dragon Airline</h3>
+                    <p>Where Excellence Takes Flight. With a strong commitment to 
+                        customer satisfaction and a passion for air travel, Dragon
+                        Airline offers exceptional service and seamless journeys.<br>
+                        
+                        From friendly smiles to state-of-the-art aircraft,we connect
+                        the world, ensuring safe,comfortable, and unforgettable 
+                        experience.</p>
+                </div>
+                <div class="info">
+                    <h3>INFOMATION</h3>
+                    <a href="#">Home</a>
+                    <a href="#">About</a>
+                    <a href="#">Offers</a>
+                    <a href="#">Seats</a>
+                    <a href="#">Destinations</a>
+                </div>
+                <div class="follow">
+                    <h3>FOLLOW</h3>
+                    <a href="#">Support</a>
+                    <a href="#">Media</a>
+                    <a href="#">Socials</a>
+                </div>
+            </div>
+            <div class="bottom">
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-youtube"></i>
+            </div>  
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function() {
+            $(".typeofFights").click(function(){
+                $(".typeofFights").removeClass("active")
+                $(this).addClass("active")
+            })
+        })
+    </script>
+    <script>
+        let width = window.innerWidth
+        console.log(width)
+    </script>
+</body>
+</html>

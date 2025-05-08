@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="indexv2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <script defer src="index.js"></script>
+</head>
+<body>
+    <div class="con">
+        <div class="left-content">
+            <div class="profile">
+                <img src="picture/2376.jpg">
+            </div>
+            <div class="Name">Natthawut Arnonla</div>
+            <div class="contect">
+                <div class="Email">
+                    <i class="fa-solid fa-envelope"></i>
+                    <p>karnvilotwilight@gmail.com</p>
+                    <span class="Text">Click to Copy Email</span>
+                </div>
+                <a class="FB" href="https://www.facebook.com/profile.php?id=100021735259402&locale=th_TH" target="_blank">
+                    <i class="fa-brands fa-facebook"></i>
+                    <p>Natthawut Artnonla</p>
+                </a>
+                <a class="IG" href="https://www.instagram.com/a.sol_05/" target="_blank">
+                    <i class="fa-brands fa-instagram"></i>
+                    <p>A.sol_05</p>
+                </a>
+                <div class="Tel">
+                    <i class="fa-solid fa-phone"></i>
+                    <p>(+66)62 892 1165</p>
+                    <span class="Text">Click to Copy Tel</span>
+                </div>
+            </div>
+        </div>
+        <div class="right-content">
+            <div class="changemode">
+                <ul id="lightmodebtn" onclick="lightmode()"><i class="fa-regular fa-eye"></i></ul>
+                <ul id="darkmodebtn" onclick="lightmode()"><i class="fa-solid fa-eye"></i></ul>
+            </div>
+            <div class="menu">
+                <ul onclick="ShowAboutmepage()" class="About-Me-button">About Me</ul>
+                <ul onclick="ShowResumepage()" class="Resume-button">Resume</ul>
+                <ul onclick="ShowProjectpage()" class="Project-button">Project</ul>
+            </div>
+            <ul id="bars"><i class="fa-solid fa-bars"></i></ul>
+            <div class="menu-sidebar">
+                <ul id="xmark"><i class="fa-solid fa-xmark"></i></ul>
+                <ul id="lightmodebtn2" onclick="lightmode()"><i class="fa-regular fa-eye"></i></ul>
+                <ul id="darkmodebtn2" onclick="lightmode()"><i class="fa-solid fa-eye"></i></ul>
+                <ul onclick="ShowAboutmepage()" class="About-Me-button">About Me</ul>
+                <ul onclick="ShowResumepage()" class="Resume-button">Resume</ul>
+                <ul onclick="ShowProjectpage()" class="Project-button">Project</ul>
+            </div>
+            <div class="About-me-content">
+                <h1>About Me</h1>
+                <p>I am a passionate Front-End Developer with a strong foundation in HTML, CSS, and JavaScript, and extensive experience in creating dynamic and user-friendly web applications. With a keen eye for design and a commitment to delivering exceptional user experiences, I excel in translating complex design concepts into responsive, high-performance code.</p>
+                <h3>Education</h3>
+                <div class="Education">
+                    <div class="ED-timeline">
+                        <div id="st"></div>
+                        <div id="st"></div>
+                    </div>
+                    <div class="ED-info">
+                        <div class="BC-info">
+                            <p>Bachelor Degree</p>
+                            <p>King Mongkut's University Technology of Thonburi(Kmutt)</p>
+                            <p>2023 - Present</p>
+                            <p>Major : Media Technology, Minor : Game Development</p>
+                        </div>
+                        <div class="HS-info">
+                            <p>High School</p>
+                            <p>Matthayom Tessaban 6 Nakhon Udonthani School</p>
+                            <p>2017 - 2023</p>
+                            <p>Intensive English Programme (IEP)</p>
+                        </div>
+                    </div>
+                </div>
+                <h3>Technology Summary</h3>
+                <div class="Abilities">
+                    <ul>Html & Css</ul>
+                    <ul>JavaScript</ul>
+                    <ul>C#</ul>
+                    <ul>Figma</ul>
+                </div>
+                <h3>Experiences</h3>
+                <div class="Experiences">Nothing</div>
+            </div>
+            <div class="Resume-content">
+                <div class="document">
+                    <p id="document">Resume</p>
+                    <div class="button">
+                        <a id="button" onclick="Opendocument1()"><i class="fa-solid fa-eye"></i>view</a>
+                        <a href="#" download id="button"><i class="fa-solid fa-download"></i>donwload</a>
+                    </div>
+                </div>
+                <div class="document">
+                    <p id="document">CV</p>
+                    <div class="button">
+                        <a id="button" onclick="Opendocument2()"><i class="fa-solid fa-eye"></i>view</a>
+                        <a href="#" download id="button"><i class="fa-solid fa-download"></i>donwload</a>
+                    </div>
+                </div>
+                <div class="document">
+                    <p id="document">Transcript</p>
+                    <div class="button">
+                        <a id="button" onclick="Opendocument3()"><i class="fa-solid fa-eye"></i>view</a>
+                        <a href="picture/20240812_66120501019_435667598.pdf" download id="button"><i class="fa-solid fa-download"></i>donwload</a>
+                    </div>
+                </div>
+            </div>
+            <div class="Project-content">
+                <div class="project">
+                    <a href="index2.html" target="_blank">
+                        <img src="picture/Screenshot 2024-08-16 225028.png">
+                    </a>
+                    <span>lookatmekmutt website</span>
+                    <p>My first project "lookatmekmutt portfolio website" create for entrance King Mongkut's University of Technology Thonburi with Portfolio Committee</p>
+                </div>
+                <div class="project">
+                    <a href="Login.html" target="_blank">
+                        <img src="picture/b.png">
+                    </a>
+                    <span>Dragon Airline</span>
+                    <p>Midterm Project of INTERACTIVE MEDIA DESIGN, This course introduces students to the basics of interactive media design. It covers key concepts in user interface (UI) and user experience (UX) design, multimedia content creation, and the use of digital tools for building interactive applications.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="Document-viwe">
+        <i class="fa-solid fa-xmark" onclick="Closedocument1()"></i>
+        <div class="resume">
+            <p>ยังไม่มีจ้า</p>
+        </div>
+    </div>
+    <div class="Document-viwe">
+        <i class="fa-solid fa-xmark" onclick="Closedocument2()"></i>
+        <div class="resume">
+            <p>ยังไม่มีจ้า</p>
+        </div>
+    </div>
+    <div class="Document-viwe">
+        <i class="fa-solid fa-xmark" onclick="Closedocument3()"></i>
+        <iframe src="picture/20240812_66120501019_435667598.pdf" width="420px" height="594px" allow="autoplay"></iframe>
+    </div>
+    <div class="alert">
+        <p>Successfully Copy</p>
+    </div>
+</body>
+</html>
