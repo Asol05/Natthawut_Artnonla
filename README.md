@@ -7,6 +7,4 @@ contact <br>
 Tel : 062-892-1165 <br>
 gmail : natthawutartnonladev@gmail.com <br>
 LinkedIn : https://www.linkedin.com/in/natthawut-artnonla-027340320/ <br><br>
-
-Projects<br>
 Portfolio website : Natthawut_Artnonla > Portfolio_web > index.html (Open with Live server)
